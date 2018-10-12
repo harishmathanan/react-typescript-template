@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./public/js/",
+    "baseUrl": ".",
+    "target": "es5",
+    "module": "es6",
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "alwaysStrict": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
