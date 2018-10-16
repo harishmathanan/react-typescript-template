@@ -8,14 +8,14 @@ const port = 3000;
 
 app.use(express.static('public'));
 
-app.get('*', (req: any, res: any) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-app.listen(port, (err: any) => {
+app.listen(port, (err) => {
   if (err) {
     console.log(err);
   } else {
-    console.log(`Dev server listening on http://localhost:${port}`);
+    console.log(`\nDev server listening on http://localhost:${port}`);
   }
 });

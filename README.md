@@ -117,7 +117,7 @@ No webpack configuration changes will be required, as awesome-typescript-loader 
 
 In order to have a development server, add express to the project `yarn add --dev express @types/express`.
 
-Next create a server.ts file in the root directory, and add the below.
+Next create a server.js file in the root directory, and add the below.
 
     'use strict';
 
@@ -129,15 +129,15 @@ Next create a server.ts file in the root directory, and add the below.
 
     app.use(express.static('public'));
 
-    app.get('*', (req: any, res: any) => {
+    app.get('*', (req, res) => {
       res.sendFile(path.join(__dirname, 'public/index.html'));
     });
 
-    app.listen(port, (err: any) => {
+    app.listen(port, (err) => {
       if (err) {
         console.log(err);
       } else {
-        console.log(`Dev server listening on http://localhost:${port}`);
+        console.log(`\nDev server listening on http://localhost:${port}`);
       }
     });
 
@@ -148,7 +148,7 @@ Copy the content from webpack.config.dev.js file into the webpack.config.prod.js
 Update the scripts in package.json to the below.
 
     "scripts": {
-      "start": "webpack --mode=development --config webpack.config.dev.js",
+      "start": "webpack --mode=development --config webpack.config.dev.js && node server.js",
       "build": "webpack --mode production --config webpack.config.prod.js"
     }
 

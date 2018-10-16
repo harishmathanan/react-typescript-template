@@ -4,8 +4,8 @@
   "description": "Project template for building apps with React and TypeScript.",
   "main": "index.ts",
   "scripts": {
-    "start": "webpack --mode=development --config webpack.config.js",
-    "build": "webpack --mode production"
+    "start": "webpack --mode=development --config webpack.config.dev.js && node server.js",
+    "build": "webpack --mode production --config webpack.config.prod.js"
   },
   "keywords": [
     "React",
