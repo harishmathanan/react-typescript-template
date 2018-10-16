@@ -111,6 +111,36 @@ Update the webpack config file to include rule for transpiling stylesheet files 
       ]
     }
 
+Add react and react-dom to the project `yarn add react react-dom`. Also, add the corresponding type definition files to the project `yarn add --dev @types/react @types/react-dom`.
+
+No webpack configuration changes will be required, as awesome-typescript-loader will handle the react transpiling as well.
+
+In order to have a development server, add express to the project `yarn add --dev express @types/express`.
+
+Next create a server.ts file in the root directory, and add the below.
+
+    'use strict';
+
+    const express = require('express');
+    const path = require('path');
+
+    const app = express();
+    const port = 3000;
+
+    app.use(express.static('public'));
+
+    app.get('*', (req: any, res: any) => {
+      res.sendFile(path.join(__dirname, 'public/index.html'));
+    });
+
+    app.listen(port, (err: any) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(`Dev server listening on http://localhost:${port}`);
+      }
+    });
+
 &nbsp;
 
 ## Optional:
@@ -128,5 +158,7 @@ Update the webpack config file to include rule for transpiling stylesheet files 
 ### Icons
 - react-icons
 
-### Server
-- express
+### Async Calls
+- es6-promise
+- whatwg-fetch
+- axios
