@@ -141,6 +141,18 @@ Next create a server.ts file in the root directory, and add the below.
       }
     });
 
+Prior to running the application, it would be best to create an additional webpack configuration file in the root directory. Name the file webpack.config.prod.js and rename the existing file to webpack.config.dev.js
+
+Copy the content from webpack.config.dev.js file into the webpack.config.prod.js file.
+
+Update the scripts in package.json to the below.
+
+    "scripts": {
+      "start": "webpack --mode=development --config webpack.config.dev.js",
+      "build": "webpack --mode production --config webpack.config.prod.js"
+    }
+
+
 &nbsp;
 
 ## Optional:
